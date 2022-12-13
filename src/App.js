@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login.jsx';
 import { useEffect } from 'react';
@@ -32,16 +32,16 @@ function App() {
     <Router>
       {isAuthenticated && <Header />}
       <Routes>
-        <Route exact path="/" element={isAuthenticated ? <Home /> : <Login />} />
-        <Route exact path="/account" element={isAuthenticated ? <Account /> : <Login />} />
-        <Route exact path="/register" element={isAuthenticated ? <Account /> : <Register />} />
-        <Route exact path="/newpost" element={isAuthenticated ? <NewPost /> : <Login />} />
-        <Route exact path="/update/profile" element={isAuthenticated ? <UpdateProfile /> : <Login />} />
-        <Route exact path="/update/password" element={isAuthenticated ? <UpdatePassword /> : <Login />} />
-        <Route exact path="/forgot/password" element={isAuthenticated ? <UpdatePassword /> : <ForgotPassword />} />
+        <Route path="/" element={isAuthenticated ? <Home /> : <Login />} />
+        <Route path="/account" element={isAuthenticated ? <Account /> : <Login />} />
+        <Route path="/register" element={isAuthenticated ? <Account /> : <Register />} />
+        <Route path="/newpost" element={isAuthenticated ? <NewPost /> : <Login />} />
+        <Route path="/update/profile" element={isAuthenticated ? <UpdateProfile /> : <Login />} />
+        <Route path="/update/password" element={isAuthenticated ? <UpdatePassword /> : <Login />} />
+        <Route path="/forgot/password" element={isAuthenticated ? <UpdatePassword /> : <ForgotPassword />} />
         <Route path="/password/reset/:token" element={isAuthenticated ? <UpdatePassword /> : <ResetPassword />} />
-        <Route exact path="/user/:id" element={isAuthenticated ? <UserProfile /> : <Login />} />
-        <Route exact path="/search" element={isAuthenticated ? <Search /> : <Login />} />
+        <Route path="/user/:id" element={isAuthenticated ? <UserProfile /> : <Login />} />
+        <Route path="/search" element={isAuthenticated ? <Search /> : <Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
