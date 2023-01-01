@@ -15,7 +15,7 @@ const store = configureStore({
 }
 });
 
-export const server = "https://soicout-backend.onrender.com";
+export const server = process.env.REACT_APP_API_URL;
 
 
 export default store;
